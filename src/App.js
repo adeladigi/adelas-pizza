@@ -1,12 +1,16 @@
 import React, {useState} from "react";
 import './App.css';
 
-import NavBar from "./NavBar";
-import SideNav from "./SideNav";
-import BottomNav from "./BottomNav";
-
+import NavBar from "./NavComponents/NavBar";
+import SideNav from "./SideNavComponents/SideNav";
+import BottomNav from "./NavComponents/BottomNav";
+import MenuShowCase from "./MenuShowCase";
+import MenuTitle from "./MenuTitle";
+import pizzaMenu from "./pizzaMenu";
+//import drinksMenu from "./drinksMenu";
 
 function App() {
+
 
 const [showMenu, setShowMenu] = useState(false)
 
@@ -34,8 +38,9 @@ function sideMenuClicked(){
  <NavBar sideMenuClicked={sideMenuClicked}/>
  <SideNav showMenu={showMenu} sideMenuClicked={sideMenuClicked} />
  <BottomNav />
+ <MenuTitle />
+ <MenuShowCase menu={pizzaMenu} />
  
-
 </div>
   );
 }
