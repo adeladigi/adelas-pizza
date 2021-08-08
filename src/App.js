@@ -1,24 +1,42 @@
-import logo from './logo.svg';
+import React, {useState} from "react";
 import './App.css';
 
+import NavBar from "./NavBar";
+import SideNav from "./SideNav";
+import BottomNav from "./BottomNav";
+
+
 function App() {
+
+const [showMenu, setShowMenu] = useState(false)
+
+if(showMenu === true){
+  const body = document.body.style="overflow-y: hidden"
+}else{
+  // do nothing
+}
+
+
+function sideMenuClicked(){
+  if(showMenu === false){
+    setShowMenu(true);
+    
+  }else if(showMenu === true){
+    setShowMenu(false)
+    
+    
+  }
+}
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+<div>
+ <NavBar sideMenuClicked={sideMenuClicked}/>
+ <SideNav showMenu={showMenu} sideMenuClicked={sideMenuClicked} />
+ <BottomNav />
+ 
+
+</div>
   );
 }
 
