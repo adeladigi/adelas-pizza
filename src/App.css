@@ -13,3 +13,9 @@ body {
     height: 100vh;
     overflow-y: hidden; 
   }
+
+
+  .body-blank {
+    background-color: purple;
+    min-height: 500px;
+  }

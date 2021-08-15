@@ -1,6 +1,5 @@
 import React from "react";
 
-
 import "./MenuShowCase.css";
 import Card from "./Card";
 
@@ -18,17 +17,10 @@ function MenuShowCase(props){
              <Card img={item.img} title={item.title} />
            )
         })} 
-            
-        
- 
-
 
        </div>
 
        
-
-       
-
        
    )
 }

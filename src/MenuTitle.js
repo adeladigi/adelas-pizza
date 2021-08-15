@@ -3,10 +3,12 @@ import "./MenuTitle.css";
 
 
 
-function MenuTitle(){
+function MenuTitle(props){
+ 
+
     return(
         <div className="menu-title">
-          <h1>Pizza Menu</h1>
+          <h1>{props.title}</h1>
         </div>
     )
 }

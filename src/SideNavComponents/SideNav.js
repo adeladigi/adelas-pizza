@@ -4,7 +4,7 @@ import "./SideNav.css";
 
 
 function SideNav(props){
-const [menu, setMenu] = useState("PIZZA");   
+const [menu, setMenu] = useState("PIZZA"); 
 
 function windowHeight(){
     const { innerWidth: width, innerHeight: height} = window;
@@ -22,6 +22,7 @@ function exitSideMenu(){
 function selectedMenu(event){
     const newMenu = event.target.innerText;
     setMenu(newMenu)
+    props.newMenuChosen(newMenu);
 }
 
 let menuHeight = windowHeight();
