@@ -41,16 +41,25 @@ function sideMenuClicked(){
 function newMenuChosen(menu){
   if(menu === "PIZZA"){
     setCurrentMenu(pizzaMenu);
+    setMenuTitle("Pizza Menu")
   }else if(menu === "PAPADIAS"){
     setCurrentMenu(papadiaMenu);
+    setMenuTitle("Papadias Menu")
   }else if(menu === "DESSERTS"){
     setCurrentMenu(dessertMenu);
+    setMenuTitle("Dessert Menu")
   }else if(menu === "SIDES"){
     setCurrentMenu(sidesMenu);
+    setMenuTitle("Sides Menu")
   }else if(menu === "DRINKS"){
     setCurrentMenu(drinksMenu);
+    setMenuTitle("Beverage Menu")
   }
   
+}
+
+function newMenuTitle(menu){
+  //setMenuTitle()
 }
 
 
@@ -60,7 +69,7 @@ function newMenuChosen(menu){
  <SideNav showMenu={showMenu} newMenuChosen={newMenuChosen} sideMenuClicked={sideMenuClicked} />
  <BottomNav />
  <MenuTitle title={menuTitle} />
- <MenuShowCase menu={currentMenu} />
+ <MenuShowCase newMenuTitle={newMenuTitle} menu={currentMenu} />
  
  <div className="body-blank">
  </div>

@@ -8,7 +8,6 @@ import Card from "./Card";
 
 function MenuShowCase(props){
 
-
    return(
        <div className="showcase-div">
             
@@ -19,9 +18,7 @@ function MenuShowCase(props){
         })} 
 
        </div>
-
-       
-       
+    
    )
 }
 
