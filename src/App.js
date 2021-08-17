@@ -39,19 +39,19 @@ function sideMenuClicked(){
 }
 
 function newMenuChosen(menu){
-  if(menu === "PIZZA"){
+  if(menu === "PIZZA" || menu === "Pizza's"){
     setCurrentMenu(pizzaMenu);
     setMenuTitle("Pizza Menu")
-  }else if(menu === "PAPADIAS"){
+  }else if(menu === "PAPADIAS" || menu === "Papadia's"){
     setCurrentMenu(papadiaMenu);
     setMenuTitle("Papadias Menu")
-  }else if(menu === "DESSERTS"){
+  }else if(menu === "DESSERTS" || menu === "Side's"){
     setCurrentMenu(dessertMenu);
     setMenuTitle("Dessert Menu")
-  }else if(menu === "SIDES"){
+  }else if(menu === "SIDES" || menu === "Desserts"){
     setCurrentMenu(sidesMenu);
     setMenuTitle("Sides Menu")
-  }else if(menu === "DRINKS"){
+  }else if(menu === "DRINKS" || menu === "Drinks"){
     setCurrentMenu(drinksMenu);
     setMenuTitle("Beverage Menu")
   }
@@ -65,7 +65,7 @@ function newMenuTitle(menu){
 
   return (
 <div>
- <NavBar sideMenuClicked={sideMenuClicked}/>
+ <NavBar sideMenuClicked={sideMenuClicked} newMenuChosen={newMenuChosen}/>
  <SideNav showMenu={showMenu} newMenuChosen={newMenuChosen} sideMenuClicked={sideMenuClicked} />
  <BottomNav />
  <MenuTitle title={menuTitle} />
