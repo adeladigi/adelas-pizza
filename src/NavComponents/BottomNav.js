@@ -2,7 +2,6 @@ import React, {useState} from "react"
 import "./BottomNav.css";
 
 
-
 function BottomNav(props){
 
 const [currentPage, setCurrentPage] = useState("MENU");
@@ -21,7 +20,6 @@ function handlePage(event){
       </div>
     )
 }
-
 
 
 export default BottomNav;

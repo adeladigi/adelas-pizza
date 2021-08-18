@@ -3,8 +3,6 @@ import "./NavBar.css";
 
 function NavBar(props){
 
-  console.log(props)
-
 function showSideMenu(){
     props.sideMenuClicked()
 }

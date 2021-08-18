@@ -11,10 +11,11 @@ import papadiaMenu from "./papadiaMenu";
 import dessertMenu from "./dessertMenu";
 import sidesMenu from "./sidesMenu";
 import drinksMenu from "./drinksMenu";
+
+import AboutUs from "./AboutUs";
 //import drinksMenu from "./drinksMenu";
 
 function App() {
-
 
 const [showMenu, setShowMenu] = useState(false)
 const [menuTitle, setMenuTitle] = useState("Pizza Menu")
@@ -32,8 +33,9 @@ function setPage(page){
     setCurrentPage("menu")
   }else if(page === "ABOUT"){
     setCurrentPage("about")
+  }else if(page === "ORDER"){
+    setCurrentPage("order")
   }
-
 
 }
 
@@ -92,33 +94,32 @@ if(currentPage === "menu"){
 
   return (
     <div>
-     <NavBar sideMenuClicked={sideMenuClicked} newMenuChosen={newMenuChosen}/>
+     <NavBar sideMenuClicked={sideMenuClicked} newMenuChosen={newMenuChosen} />
      <SideNav showMenu={showMenu} newMenuChosen={newMenuChosen} sideMenuClicked={sideMenuClicked} />
      <BottomNav setPage={setPage} />
-     {/* <MenuShowCase newMenuTitle={newMenuTitle} menu={currentMenu} /> */}
-     
+     <AboutUs />
      <div className="body-blank">
      </div>
     
     </div>
       );
+
+    }else if(currentPage === "order"){
+
+      return (
+        <div>
+         <NavBar sideMenuClicked={sideMenuClicked} newMenuChosen={newMenuChosen}/>
+         <SideNav showMenu={showMenu} newMenuChosen={newMenuChosen} sideMenuClicked={sideMenuClicked} />
+         <BottomNav setPage={setPage} />
+          <h1>order</h1>
+         <div className="body-blank">
+         </div>
+        
+        </div>
+          );
     }
 
 }
 
-//   return (
-// <div>
-//  <NavBar sideMenuClicked={sideMenuClicked} newMenuChosen={newMenuChosen}/>
-//  <SideNav showMenu={showMenu} newMenuChosen={newMenuChosen} sideMenuClicked={sideMenuClicked} />
-//  <BottomNav />
-//  <MenuTitle title={menuTitle} />
-//  <MenuShowCase newMenuTitle={newMenuTitle} menu={currentMenu} />
- 
-//  <div className="body-blank">
-//  </div>
-
-// </div>
-//   );
-// }
 
 export default App;
