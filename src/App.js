@@ -45,10 +45,10 @@ function newMenuChosen(menu){
   }else if(menu === "PAPADIAS" || menu === "Papadia's"){
     setCurrentMenu(papadiaMenu);
     setMenuTitle("Papadias Menu")
-  }else if(menu === "DESSERTS" || menu === "Side's"){
+  }else if(menu === "DESSERTS" || menu ===  "Desserts"){
     setCurrentMenu(dessertMenu);
     setMenuTitle("Dessert Menu")
-  }else if(menu === "SIDES" || menu === "Desserts"){
+  }else if(menu === "SIDES" || menu === "Side's"){
     setCurrentMenu(sidesMenu);
     setMenuTitle("Sides Menu")
   }else if(menu === "DRINKS" || menu === "Drinks"){
