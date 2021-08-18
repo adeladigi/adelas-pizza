@@ -3,12 +3,14 @@ import "./BottomNav.css";
 
 
 
-function BottomNav(){
+function BottomNav(props){
+
 const [currentPage, setCurrentPage] = useState("MENU");
 
 function handlePage(event){
  const button = event.target.innerText;
  setCurrentPage(button)
+ props.setPage(button)
 }
 
   return(

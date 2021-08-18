@@ -19,11 +19,22 @@ function App() {
 const [showMenu, setShowMenu] = useState(false)
 const [menuTitle, setMenuTitle] = useState("Pizza Menu")
 const [currentMenu, setCurrentMenu] = useState(pizzaMenu)
+const [currentPage, setCurrentPage] = useState("menu")
 
 if(showMenu === true){
   const body = document.body.style="overflow-y: hidden";
 }else{
   // do nothing
+}
+
+function setPage(page){
+  if(page === "MENU"){
+    setCurrentPage("menu")
+  }else if(page === "ABOUT"){
+    setCurrentPage("about")
+  }
+
+
 }
 
 
@@ -62,20 +73,52 @@ function newMenuTitle(menu){
   //setMenuTitle()
 }
 
+if(currentPage === "menu"){
 
   return (
-<div>
- <NavBar sideMenuClicked={sideMenuClicked} newMenuChosen={newMenuChosen}/>
- <SideNav showMenu={showMenu} newMenuChosen={newMenuChosen} sideMenuClicked={sideMenuClicked} />
- <BottomNav />
- <MenuTitle title={menuTitle} />
- <MenuShowCase newMenuTitle={newMenuTitle} menu={currentMenu} />
- 
- <div className="body-blank">
- </div>
+    <div>
+     <NavBar sideMenuClicked={sideMenuClicked} newMenuChosen={newMenuChosen}/>
+     <SideNav showMenu={showMenu} newMenuChosen={newMenuChosen} sideMenuClicked={sideMenuClicked} />
+     <BottomNav setPage={setPage} />
+     <MenuTitle title={menuTitle} />
+     <MenuShowCase newMenuTitle={newMenuTitle} menu={currentMenu} />
+     
+     <div className="body-blank">
+     </div>
+    
+    </div>
+      );
+    }else if(currentPage === "about"){
 
-</div>
-  );
+  return (
+    <div>
+     <NavBar sideMenuClicked={sideMenuClicked} newMenuChosen={newMenuChosen}/>
+     <SideNav showMenu={showMenu} newMenuChosen={newMenuChosen} sideMenuClicked={sideMenuClicked} />
+     <BottomNav setPage={setPage} />
+     {/* <MenuShowCase newMenuTitle={newMenuTitle} menu={currentMenu} /> */}
+     
+     <div className="body-blank">
+     </div>
+    
+    </div>
+      );
+    }
+
 }
+
+//   return (
+// <div>
+//  <NavBar sideMenuClicked={sideMenuClicked} newMenuChosen={newMenuChosen}/>
+//  <SideNav showMenu={showMenu} newMenuChosen={newMenuChosen} sideMenuClicked={sideMenuClicked} />
+//  <BottomNav />
+//  <MenuTitle title={menuTitle} />
+//  <MenuShowCase newMenuTitle={newMenuTitle} menu={currentMenu} />
+ 
+//  <div className="body-blank">
+//  </div>
+
+// </div>
+//   );
+// }
 
 export default App;
