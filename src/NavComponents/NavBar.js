@@ -12,7 +12,6 @@ function NavMenuClicked(event) {
     props.newMenuChosen(menuName)
 }
 
-
     return(
       <nav>
         <h3 id="nav-logo" className="nav-item">Adela's Pizza</h3>
@@ -21,6 +20,5 @@ function NavMenuClicked(event) {
       </nav>
     )
 }
-
 
 export default NavBar;
