@@ -31,7 +31,7 @@
     position: absolute;
     top: 95%;
     left: 32px;
-    color: #000;
+    color: #fff;
     cursor: pointer;
   }
   
@@ -41,12 +41,11 @@
     position: absolute;
     top: 95%;
     right: 32px;
-    color: #000;
+    color: #fff;
     cursor: pointer;
   }
   
   .slide-show {
-    display: grid;
     overflow: hidden;
     margin: auto;
   }
@@ -72,7 +71,7 @@
   .deal-info-box {
       background-color: #fff;
       width: 380px;
-      height: 300px;
+      height: 340px;
   }
 
   .deal-info-box h3 {
@@ -88,4 +87,63 @@
     padding: 20px;
     color: #8D2828;
     font-family: 'Anton', sans-serif;
+  }
+
+  .deal-info-box h4{
+    color: #8D2828;
+    font-family: 'Anton', sans-serif;
+    padding: 20px;
+    font-size: 40px;
+    margin: 0;
+  }
+
+  @media (min-width: 768px){
+    .left-arrow {
+        font-size: 40px;
+        color: #000;
+      }
+      
+      .right-arrow {
+        font-size: 40px;
+        color: #000;
+      }
+
+      .img {
+        max-height: 380px;
+        max-width: 420px;
+        min-height: 380px;
+        min-width: 500px;
+      }
+
+      .deal-info-box {
+        background-color: #fff;
+        width: 420px;
+        height: 300px;
+    }
+  
+    .deal-info-box h3 {
+        margin: 0;
+        padding: 20px;
+        color: #8D2828;
+        font-family: 'Anton', sans-serif;
+        font-size: 30px;
+    }
+  
+    .deal-info-box p {
+      margin: 0;
+      padding: 20px;
+      color: #8D2828;
+      font-family: 'Anton', sans-serif;
+    }
+
+    .deal-info-box h4{
+      color: yellow;
+      font-family: 'Anton', sans-serif;
+      padding: 20px;
+    }
+
+  }
+
+  @media (min-width: 768px) {
+      
   }
