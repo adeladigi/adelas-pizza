@@ -37,16 +37,13 @@ function Deals() {
          return(
           <div className={index === current ? "slide active" : "slide"} key={index}>
             {index === current && <img className="img" src={slide.img} />}
-           
+            {index === current && <div className="deal-info-box"></div> }
+            
           </div> 
          )
        })}
-
-        {/* <div className={}>
-          <img src={imgData[current].img} />
-        </div>  */}
-      
-       
+           
+     
       </div>
     </div>
   );

@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background-color: #fff;
   }
   
   h1 {
@@ -45,8 +46,7 @@
   }
   
   .slide-show {
-    display: flex;
-    flex-direction: row;
+    display: grid;
     overflow: hidden;
     margin: auto;
   }
@@ -56,6 +56,7 @@
     max-width: 380px;
     min-height: 350px;
     min-width: 380px;
+    border-radius: 12px;
   }
   
   .slide {
@@ -67,4 +68,10 @@
     opacity: 1;
     transition-duration: 1s;
     transform: scale(1.08);
+  }
+
+  .deal-info-box {
+      background-color: #628395;
+      width: 380px;
+      height: 300px;
   }
