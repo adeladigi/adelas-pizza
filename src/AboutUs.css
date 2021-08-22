@@ -20,3 +20,12 @@
     padding: 25px;
     font-size: 20px;
 }
+
+@media (min-width: 756px) {
+
+    .about-container p {
+     margin: auto;   
+     max-width: 600px;
+    }
+
+}

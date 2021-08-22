@@ -1,0 +1,70 @@
+.App {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  h1 {
+    margin: auto;
+  }
+  
+  .slide-div {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .deal-log {
+      font-family: 'Anton', sans-serif;
+      background-color: #fff;
+      padding-left: 20px;
+  }
+  
+  .deal-log h3 {
+      color: #000;
+  }
+
+  
+  .left-arrow {
+    font-size: 40px;
+    z-index: 1;
+    position: absolute;
+    top: 95%;
+    left: 32px;
+    color: #000;
+    cursor: pointer;
+  }
+  
+  .right-arrow {
+    font-size: 40px;
+    z-index: 1;
+    position: absolute;
+    top: 95%;
+    right: 32px;
+    color: #000;
+    cursor: pointer;
+  }
+  
+  .slide-show {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    margin: auto;
+  }
+  
+  .img {
+    max-height: 350px;
+    max-width: 380px;
+    min-height: 350px;
+    min-width: 380px;
+  }
+  
+  .slide {
+    opacity: 0;
+    transition-duration: 1s ease;
+  }
+  
+  .slide.active {
+    opacity: 1;
+    transition-duration: 1s;
+    transform: scale(1.08);
+  }

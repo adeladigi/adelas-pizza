@@ -13,7 +13,11 @@ import sidesMenu from "./sidesMenu";
 import drinksMenu from "./drinksMenu";
 
 import AboutUs from "./AboutUs";
+import Deals from "./Deals";
+
+
 //import drinksMenu from "./drinksMenu";
+
 
 function App() {
 
@@ -84,9 +88,10 @@ if(currentPage === "menu"){
      <BottomNav setPage={setPage} />
      <MenuTitle title={menuTitle} />
      <MenuShowCase newMenuTitle={newMenuTitle} menu={currentMenu} />
-     
+     <Deals />
      <div className="body-blank">
      </div>
+    
     
     </div>
       );
@@ -98,8 +103,10 @@ if(currentPage === "menu"){
      <SideNav showMenu={showMenu} newMenuChosen={newMenuChosen} sideMenuClicked={sideMenuClicked} />
      <BottomNav setPage={setPage} />
      <AboutUs />
+     
      <div className="body-blank">
      </div>
+    
     
     </div>
       );
@@ -112,8 +119,10 @@ if(currentPage === "menu"){
          <SideNav showMenu={showMenu} newMenuChosen={newMenuChosen} sideMenuClicked={sideMenuClicked} />
          <BottomNav setPage={setPage} />
           <h1>order</h1>
+          <Deals />
          <div className="body-blank">
          </div>
+  
         
         </div>
           );
