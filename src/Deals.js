@@ -37,7 +37,7 @@ function Deals() {
          return(
           <div className={index === current ? "slide active" : "slide"} key={index}>
             {index === current && <img className="img" src={slide.img} />}
-            {index === current && <div className="deal-info-box"></div> }
+            {index === current && <div className="deal-info-box"> <h3>{slide.title}</h3> <p>{slide.info}</p> </div> }
             
           </div> 
          )

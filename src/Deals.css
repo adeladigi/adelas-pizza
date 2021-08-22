@@ -56,7 +56,6 @@
     max-width: 380px;
     min-height: 350px;
     min-width: 380px;
-    border-radius: 12px;
   }
   
   .slide {
@@ -71,7 +70,22 @@
   }
 
   .deal-info-box {
-      background-color: #628395;
+      background-color: #fff;
       width: 380px;
       height: 300px;
+  }
+
+  .deal-info-box h3 {
+      margin: 0;
+      padding: 20px;
+      color: #8D2828;
+      font-family: 'Anton', sans-serif;
+      font-size: 30px;
+  }
+
+  .deal-info-box p {
+    margin: 0;
+    padding: 20px;
+    color: #8D2828;
+    font-family: 'Anton', sans-serif;
   }
