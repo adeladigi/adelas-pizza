@@ -119,7 +119,7 @@ if(currentPage === "menu"){
          <SideNav showMenu={showMenu} newMenuChosen={newMenuChosen} sideMenuClicked={sideMenuClicked} />
          <BottomNav setPage={setPage} />
           <h1>order</h1>
-          <Deals />
+         
          <div className="body-blank">
          </div>
   
