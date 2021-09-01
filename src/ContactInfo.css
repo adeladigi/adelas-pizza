@@ -1,0 +1,32 @@
+.contact-div {
+    background-color:#fff;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.contact-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.banner-div {
+    display: flex;
+    justify-content: center;
+}
+
+.banner-div h3 {
+    font-size: 30px;
+    font-family: 'Anton', sans-serif;
+    color: #8D2828;
+}
+
+.location-div {
+    
+}
+
+.location-div h3 {
+    font-family: 'Anton', sans-serif;
+    color: #8D2828;
+}

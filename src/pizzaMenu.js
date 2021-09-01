@@ -19,6 +19,21 @@ const pizzaMenu = [
         title: "The Works Pizza",
         linkURL: "#"
     },
+    {
+        img: "" ,
+        title: "",
+        linkURL: "#"
+    },
+    {
+        img: "" ,
+        title: "",
+        linkURL: "#"
+    },
+    {
+        img: "" ,
+        title: "",
+        linkURL: "#"
+    },
 ]
 
 export default pizzaMenu;
