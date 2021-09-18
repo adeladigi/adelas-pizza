@@ -5,7 +5,7 @@
   } */
 
 body {
-    background-color: #EDEDED;
+    background-color: #fff;
     margin: 0px;
 }
 
@@ -19,3 +19,41 @@ body {
     background-color: #fff;
     min-height: 700px;
   }
+
+.stn {
+  width: 100%;
+  background-color:#fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 200px;
+}
+
+.etj {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+img {
+  max-width: 600px;
+}
+
+.total-div {
+  background-color: #fff;
+  min-width: 300px;
+  font-family: 'Anton', sans-serif;
+  border: 1px solid  #EFEFEF;
+  padding: 20px;
+}
+
+.fa-shopping-cart {
+  background-color: #fff;
+}
+
+@media (min-width: 768px){
+  .stn {
+    flex-direction: row;
+  }
+}

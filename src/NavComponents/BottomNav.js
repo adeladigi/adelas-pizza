@@ -16,7 +16,7 @@ function handlePage(event){
       <div className="bottom-nav">
         <h3 className={currentPage === "MENU" ? "current-page" : ""} onClick={handlePage} >MENU</h3>
         <h3 className={currentPage === "ABOUT" ? "current-page" : ""} onClick={handlePage} >ABOUT</h3>
-        <h3 className={currentPage === "ORDER" ? "current-page" : ""} onClick={handlePage} >ORDER</h3>
+        <h3 className={currentPage === "CART" ? "current-page" : ""} onClick={handlePage} >CART <i class="fas fa-shopping-cart"></i></h3>
       </div>
     )
 }

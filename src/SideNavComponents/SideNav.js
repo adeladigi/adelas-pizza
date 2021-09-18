@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import "./SideNav.css";
+import { FaTimes } from "react-icons/fa";
 
 
 
@@ -31,7 +32,7 @@ let menuHeight = windowHeight();
         <div className="side-nav-container" style={{display: props.showMenu === true ? "" : "none"}}>
             <div className="side-nav"style={{height: props.showMenu === true ? (menuHeight.height) + "px" : "0px", width: props.showMenu === true ? "250px" : "0px"}} >
             <div className="box-exit-div">
-            <i onClick={exitSideMenu} class="fas fa-times"></i>
+            <FaTimes onClick={exitSideMenu} class="fas fa-times"></FaTimes>
             </div>   
             <h3 className={menu === "PIZZA" ? "current-menu" : ""} onClick={selectedMenu} >PIZZA</h3>
             <h3 className={menu === "PAPADIAS" ? "current-menu" : ""} value="papadias" onClick={selectedMenu} >PAPADIAS</h3>

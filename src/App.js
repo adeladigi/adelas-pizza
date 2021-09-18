@@ -17,17 +17,24 @@ import Deals from "./Deals";
 import ContactInfo from "./ContactInfo";
 import Map from "./Map";
 import Footer from "./Footer";
+import MoreInfo from "./MoreInfo";
+import CartList from "./CartList";
+import EmptyCart from "./EmptyCart";
 
 
 //import drinksMenu from "./drinksMenu";
 
-
 function App() {
+  // this is the total amount of all items in cart
+  let newAmount = 0;
+  let itemNum = 0;
 
 const [showMenu, setShowMenu] = useState(false)
 const [menuTitle, setMenuTitle] = useState("PIZZA MENU")
 const [currentMenu, setCurrentMenu] = useState(pizzaMenu)
 const [currentPage, setCurrentPage] = useState("menu")
+const [chosenproduct, setChosenProduct] = useState({img: "", title: "", price: 0})
+const [cartList, setCartList] = useState([])
 
 if(showMenu === true){
   const body = document.body.style="overflow-y: hidden";
@@ -40,8 +47,10 @@ function setPage(page){
     setCurrentPage("menu")
   }else if(page === "ABOUT"){
     setCurrentPage("about")
-  }else if(page === "ORDER"){
-    setCurrentPage("order")
+  }else if(page === "CART"){
+    setCurrentPage("cart")
+  }else if(page === "PRODUCT"){
+    setCurrentPage("product")
   }
 
 }
@@ -62,18 +71,23 @@ function newMenuChosen(menu){
   if(menu === "PIZZA" || menu === "Pizza's"){
     setCurrentMenu(pizzaMenu);
     setMenuTitle("PIZZA MENU")
+    setCurrentPage("menu")
   }else if(menu === "PAPADIAS" || menu === "Papadia's"){
     setCurrentMenu(papadiaMenu);
     setMenuTitle("PAPADIAS MENU")
+    setCurrentPage("menu")
   }else if(menu === "DESSERTS" || menu ===  "Desserts"){
     setCurrentMenu(dessertMenu);
     setMenuTitle("DESSERT MENU")
+    setCurrentPage("menu")
   }else if(menu === "SIDES" || menu === "Side's"){
     setCurrentMenu(sidesMenu);
     setMenuTitle("SIDES MENU")
+    setCurrentPage("menu")
   }else if(menu === "DRINKS" || menu === "Drinks"){
     setCurrentMenu(drinksMenu);
     setMenuTitle("BEVERAGE MENU")
+    setCurrentPage("menu")
   }
   
 }
@@ -81,6 +95,34 @@ function newMenuChosen(menu){
 function newMenuTitle(menu){
   //setMenuTitle()
 }
+
+
+
+function productInfoRequest(currentProduct){
+   setChosenProduct(currentProduct)
+   setCurrentPage("product")
+}
+
+function addToCart(product){
+   const id = Math.floor(Math.random() * 100);
+   
+   const newObj = {
+   img: product.img,
+   title: product.title,
+   price: product.price,
+   id: id
+   } 
+
+   setCartList(cartList.concat(newObj))
+   
+}
+
+function deleteCartItem(num){
+
+  const newList = cartList.filter((item) => item.id !== num);
+   setCartList(newList);
+}
+
 
 if(currentPage === "menu"){
 
@@ -90,10 +132,12 @@ if(currentPage === "menu"){
      <SideNav showMenu={showMenu} newMenuChosen={newMenuChosen} sideMenuClicked={sideMenuClicked} />
      <BottomNav setPage={setPage} />
      <MenuTitle title={menuTitle} />
-     <MenuShowCase newMenuTitle={newMenuTitle} menu={currentMenu} />
+     <MenuShowCase newMenuTitle={newMenuTitle} menu={currentMenu} topInfoFunc={productInfoRequest}/>
      <Deals />
-     <Map />
+     <div className="stn">
      <ContactInfo />
+     <Map />
+     </div>
      <Footer />
     
     </div>
@@ -106,30 +150,96 @@ if(currentPage === "menu"){
      <SideNav showMenu={showMenu} newMenuChosen={newMenuChosen} sideMenuClicked={sideMenuClicked} />
      <BottomNav setPage={setPage} />
      <AboutUs />
-     <div className="body-blank">
+     <div className="etj">
+     <img src="https://i0.wp.com/blog.slicelife.com/wp-content/uploads/2019/04/owners.png?fit=1400%2C934&ssl=1" alt="pizza-staff"/>
      </div>
+     <div className="stn">
      <ContactInfo />
+     <Map />
+     </div>
      <Footer />
     </div>
       );
 
-    }else if(currentPage === "order"){
+    }else if(currentPage === "cart"){
+      if(cartList.length === 0){
+        return(
+          <div>
+          <NavBar sideMenuClicked={sideMenuClicked} newMenuChosen={newMenuChosen}/>
+          <SideNav showMenu={showMenu} newMenuChosen={newMenuChosen} sideMenuClicked={sideMenuClicked} />
+          { 
+          // function adds amount total and item position in array
+          cartList.forEach(function(item){
+               newAmount = newAmount+ item.price;
+             
+            })}
+          <BottomNav setPage={setPage} />
 
+          <EmptyCart />
+          <div className="total-div">
+            <h1>Total Amount $  {newAmount}</h1>
+          </div>
+          <div className="body-blank">
+          </div>
+   
+          <Footer />
+         </div>
+
+        )
+      }else{
+        return (
+          <div>
+           <NavBar sideMenuClicked={sideMenuClicked} newMenuChosen={newMenuChosen}/>
+           <SideNav showMenu={showMenu} newMenuChosen={newMenuChosen} sideMenuClicked={sideMenuClicked} />
+           { 
+           // function adds amount total and item position in array
+           cartList.forEach(function(item){
+                newAmount = newAmount+ item.price;
+              
+             })}
+           <BottomNav setPage={setPage} />
+  
+           {cartList.map(function(item){
+             return (
+              <CartList deleteFunc={deleteCartItem}  cartArray={item} />
+             )
+           })}
+
+           <div className="total-div">
+             <h1>Total Amount $  {newAmount}</h1>
+           </div>
+           <div className="body-blank">
+           </div>
+    
+           <Footer />
+          </div>
+            );
+
+      }
+         
+
+    }else if(currentPage === "product"){
       return (
         <div>
          <NavBar sideMenuClicked={sideMenuClicked} newMenuChosen={newMenuChosen}/>
          <SideNav showMenu={showMenu} newMenuChosen={newMenuChosen} sideMenuClicked={sideMenuClicked} />
          <BottomNav setPage={setPage} />
-          <h1>order</h1>
-         <div className="body-blank">
+         <MoreInfo info={chosenproduct} cartFunc={addToCart} />
+         <Deals />
+         <div className="stn">
+         <ContactInfo />
+         <Map />
          </div>
-  
          <Footer />
         </div>
           );
+
     }
 
 }
 
 
 export default App;
+
+
+// 1# show a list of products that have be added to cart in cart section

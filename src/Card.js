@@ -2,6 +2,12 @@ import React from "react";
 
 
 function Card(props){
+
+
+  function infoRequest(){
+    
+    props.sendInfoFunc(props);
+  }
     
     return(
         <div className="card-menu">
@@ -10,7 +16,7 @@ function Card(props){
         </img>
 
         <div className="info-div">
-          <h3>{props.title}</h3> <a href="#">More Info</a>
+          <h3>{props.title}</h3> <a href="#" onClick={infoRequest}>More Info</a>
         </div>
       </div>
     )

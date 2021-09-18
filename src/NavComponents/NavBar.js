@@ -1,6 +1,8 @@
 import React from "react";
 import "./NavBar.css";
 
+import { FaBars } from "react-icons/fa";
+
 function NavBar(props){
 
 function showSideMenu(){
@@ -16,7 +18,8 @@ function NavMenuClicked(event) {
       <nav>
         <h3 id="nav-logo" className="nav-item">Adela's Pizza</h3>
         <div className="menu-selection-div"> <h3 onClick={NavMenuClicked}>Pizza's</h3> <h3 onClick={NavMenuClicked}>Papadia's</h3> <h3 onClick={NavMenuClicked}>Side's</h3> <h3 onClick={NavMenuClicked}>Desserts</h3> <h3 onClick={NavMenuClicked}>Drinks</h3>  </div>
-        <i onClick={showSideMenu} className="fas fa-bars nav-item"></i>
+        <FaBars onClick={showSideMenu} className="fas fa-bars nav-item"></FaBars>
+        
       </nav>
     )
 }

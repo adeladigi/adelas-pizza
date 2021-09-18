@@ -1,6 +1,6 @@
 import React from "react";
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
-
+import API_KEY from "./API_KEY";
 
 const containerStyle = {
   width: '400px',
@@ -17,9 +17,9 @@ function Map() {
 
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: "AIzaSyB2gI00wGXQVdEeEayhJ6neQEt1AKDTIs4"
+    googleMapsApiKey: API_KEY
   })
-
+  
   const [map, setMap] = React.useState(null)
 
   const onLoad = React.useCallback(function callback(map) {
@@ -31,6 +31,8 @@ function Map() {
   const onUnmount = React.useCallback(function callback(map) {
     setMap(null)
   }, [])
+
+  //console.log(process.env.GOOGLE_KEY)
 
   return isLoaded ? (
     <GoogleMap
@@ -44,6 +46,7 @@ function Map() {
       { /* Child components, such as markers, info windows, etc. */ }
       <div></div>
     </GoogleMap>
+
 ) : <div></div>
 
 
