@@ -18,7 +18,7 @@ function Card(props){
 
         <div className="info-div">
           <h3>{props.title}</h3> 
-          <h4 onClick={infoRequest} type="button" class="btn btn-dark btn-sm">More Info</h4>
+          <h4 onClick={infoRequest} type="button" class="btn btn-dark btn-sm">Details</h4>
         </div>
       </div>
     )
