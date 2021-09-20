@@ -2,14 +2,11 @@ import React from "react";
 import "./MoreInfo.css"
 
 
-
-
 function MoreInfo(props){
 
     function cartBtn(){
        props.cartFunc(props.info)
     }
-
 
 
     return(
@@ -22,7 +19,7 @@ function MoreInfo(props){
          <div className="info-22-div">
          <h3 id="title-32">{props.info.title}</h3>
          <h3>$ {props.info.price}</h3>
-         <button onClick={cartBtn} >Add to Cart</button>
+         <button onClick={cartBtn}  type="button" class="btn btn-danger btn-sm">Add to Cart</button>
          </div>
           
         </div>

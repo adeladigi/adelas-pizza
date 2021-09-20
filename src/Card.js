@@ -1,6 +1,7 @@
 import React from "react";
 
 
+
 function Card(props){
 
 
@@ -16,7 +17,8 @@ function Card(props){
         </img>
 
         <div className="info-div">
-          <h3>{props.title}</h3> <a href="#" onClick={infoRequest}>More Info</a>
+          <h3>{props.title}</h3> 
+          <button onClick={infoRequest} type="button" class="btn btn-dark btn-sm">More Info</button>
         </div>
       </div>
     )

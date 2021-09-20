@@ -20,6 +20,8 @@ import Footer from "./Footer";
 import MoreInfo from "./MoreInfo";
 import CartList from "./CartList";
 import EmptyCart from "./EmptyCart";
+import PlaceOrderBtn from "./PlaceOrderBtn";
+import CartBanner from "./CartBanner";
 
 
 //import drinksMenu from "./drinksMenu";
@@ -123,6 +125,7 @@ function deleteCartItem(num){
    setCartList(newList);
 }
 
+let n = newAmount.toFixed(2)
 
 if(currentPage === "menu"){
 
@@ -151,7 +154,7 @@ if(currentPage === "menu"){
      <BottomNav setPage={setPage} />
      <AboutUs />
      <div className="etj">
-     <img src="https://i0.wp.com/blog.slicelife.com/wp-content/uploads/2019/04/owners.png?fit=1400%2C934&ssl=1" alt="pizza-staff"/>
+     <img src="https://bostonglobe-prod.cdn.arcpublishing.com/resizer/ndB9HRDWJo5JzNT1xUiXYj9a42Y=/506x0/arc-anglerfish-arc2-prod-bostonglobe.s3.amazonaws.com/public/ANSADPFZAYI6PI7MVN5DCE5XF4.jpg" alt="pizza-staff"/>
      </div>
      <div className="stn">
      <ContactInfo />
@@ -174,11 +177,12 @@ if(currentPage === "menu"){
              
             })}
           <BottomNav setPage={setPage} />
-
+           <CartBanner />
           <EmptyCart />
           <div className="total-div">
-            <h1>Total Amount $  {newAmount}</h1>
+            <h1>Total Amount $  {n}</h1>
           </div>
+          <PlaceOrderBtn />
           <div className="body-blank">
           </div>
    
@@ -208,6 +212,7 @@ if(currentPage === "menu"){
            <div className="total-div">
              <h1>Total Amount $  {newAmount}</h1>
            </div>
+           <PlaceOrderBtn />
            <div className="body-blank">
            </div>
     
