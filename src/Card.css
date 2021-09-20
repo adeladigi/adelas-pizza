@@ -34,8 +34,19 @@
      letter-spacing: 2px;
  }
 
- .info-div button{
-     color: brown;
+ .card-menu h4 {
+    background-color: #8D2828;
+    font-family: 'Anton', sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: #fff;
+    cursor: pointer; 
+    padding: 5px;
+    border-radius: 7px;  
+ }
+
+ .card-menu h4:hover {
+    color: #57CC99;
  }
 
  @media (min-width: 1024px){
