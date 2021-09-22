@@ -23,7 +23,7 @@ function CartList (props){
             </div>  
          </div>
          <div className="list-delet-btn">
-             <button onClick={handleDelete}>Delete</button>
+             <h4 onClick={handleDelete}>Delete</h4>
          </div>
         </div>
     )

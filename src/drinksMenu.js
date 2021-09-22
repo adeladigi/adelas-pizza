@@ -1,6 +1,6 @@
 const drinksMenu = [
     {
-        img: "https://www.pizzapatron.com/wp-content/uploads/2018/01/Homepage-Web@2x-6.png" ,
+        img: "https://d2d8wwwkmhfcva.cloudfront.net/400x/d2lnr5mha7bycj.cloudfront.net/product-image/file/large_8d561c1d-a6a5-47f3-8672-212b0660c2c3.png" ,
         title: "Pepsi",
         linkURL: "#",
         price: 2.99
