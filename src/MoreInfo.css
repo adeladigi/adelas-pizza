@@ -49,6 +49,7 @@
   text-align: center;
   color: #fff;
   letter-spacing: 3px;
+  cursor: pointer;
 }
 
 .info-22-div h4:hover {

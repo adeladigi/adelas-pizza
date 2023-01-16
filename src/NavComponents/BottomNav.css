@@ -11,6 +11,7 @@
     color: #fff;
     font-family: 'Anton', sans-serif;
     letter-spacing: 3px; 
+    cursor: pointer;
 }
 
 .bottom-nav h3:hover {

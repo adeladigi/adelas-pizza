@@ -62,10 +62,10 @@ function sideMenuClicked(){
 
   if(showMenu === false){
     setShowMenu(true);
-    
+
   }else if(showMenu === true){
     setShowMenu(false)
-      
+
   }
 }
 
@@ -91,7 +91,7 @@ function newMenuChosen(menu){
     setMenuTitle("BEVERAGE MENU")
     setCurrentPage("menu")
   }
-  
+
 }
 
 function newMenuTitle(menu){
@@ -107,16 +107,16 @@ function productInfoRequest(currentProduct){
 
 function addToCart(product){
    const id = Math.floor(Math.random() * 100);
-   
+
    const newObj = {
    img: product.img,
    title: product.title,
    price: product.price,
    id: id
-   } 
+   }
 
    setCartList(cartList.concat(newObj))
-   
+
 }
 
 function deleteCartItem(num){
@@ -142,7 +142,7 @@ if(currentPage === "menu"){
      <Map />
      </div>
      <Footer />
-    
+
     </div>
       );
     }else if(currentPage === "about"){
@@ -170,11 +170,11 @@ if(currentPage === "menu"){
           <div>
           <NavBar sideMenuClicked={sideMenuClicked} newMenuChosen={newMenuChosen}/>
           <SideNav showMenu={showMenu} newMenuChosen={newMenuChosen} sideMenuClicked={sideMenuClicked} />
-          { 
+          {
           // function adds amount total and item position in array
           cartList.forEach(function(item){
                newAmount = newAmount+ item.price;
-             
+
             })}
           <BottomNav setPage={setPage} />
            <CartBanner />
@@ -185,7 +185,7 @@ if(currentPage === "menu"){
           <PlaceOrderBtn />
           <div className="body-blank">
           </div>
-   
+
           <Footer />
          </div>
 
@@ -195,14 +195,14 @@ if(currentPage === "menu"){
           <div>
            <NavBar sideMenuClicked={sideMenuClicked} newMenuChosen={newMenuChosen}/>
            <SideNav showMenu={showMenu} newMenuChosen={newMenuChosen} sideMenuClicked={sideMenuClicked} />
-           { 
+           {
            // function adds amount total and item position in array
            cartList.forEach(function(item){
                 newAmount = newAmount+ item.price;
-              
+
              })}
            <BottomNav setPage={setPage} />
-  
+
            {cartList.map(function(item){
              return (
               <CartList deleteFunc={deleteCartItem}  cartArray={item} />
@@ -215,13 +215,13 @@ if(currentPage === "menu"){
            <PlaceOrderBtn />
            <div className="body-blank">
            </div>
-    
+
            <Footer />
           </div>
             );
 
       }
-         
+
 
     }else if(currentPage === "product"){
       return (

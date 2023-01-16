@@ -12,7 +12,7 @@ function AboutUs(){
 
 
            <p>WelcomeIn  1985,  Chef  Ernesto  opened  A&V  Pizzeria and   Family   Restaurant.
-              Today,   under   the care  of  Pino  &  Gina,  A&V  continues  to  be part     of 
+              Today,   under   the care  of  Pino  &  Gina,  A&V  continues  to  be part     of
               the     community,     with     many customers  having  been  raised  on  our  food.
               A&V   is   a   great   place   for   a   quick   bite   or dinner   with   the   whole
               family.   Order   for pickup     or     delivery,     eat     in     our     cozy restaurant,
